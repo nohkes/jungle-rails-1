@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>
+      Your order has been placed.<br>
+    </p>
+    <p>
+        <% @order.line_items.each do |line_item| %>
+        
+          <ul>Product": "<%= line_item.product.name %></ul>
+          <ul>Quantity": "<%= line_item.quantity %></ul>
+          <ul>Price": "<%= line_item.item_price %></ul>
+       
+        <% end %>
+    </p>
+    <p>Thanks for shopping and have a great day!</p>
+  </body>
+</html>
