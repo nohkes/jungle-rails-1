@@ -23,6 +23,7 @@ end
 
 ## CATEGORIES
 
+
 puts "Finding or Creating Categories ..."
 
 cat1 = Category.find_or_create_by! name: 'Apparel'
@@ -131,6 +132,11 @@ cat3.products.create!({
   quantity: 0,
   price: 2_483.75
 })
-
+puts "Re-creating Reviews ..."
+prod1 = Product.find_by(id: 5)
+prod1.review.create!({
+  description: "world.",
+  rating: 4
+})
 
 puts "DONE!"
