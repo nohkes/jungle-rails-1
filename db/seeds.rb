@@ -133,6 +133,7 @@ cat3.products.create!({
   price: 2_483.75
 })
 puts "Re-creating Reviews ..."
+Review.destroy_all
 prod1 = Product.find_by(id: 5)
 prod1.review.create!({
   description: "world.",

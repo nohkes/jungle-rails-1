@@ -27,6 +27,23 @@
     </div>
 
   </article>
+      <div class="row">
+    <h2>Please tell us your thoughts </h2>
+      <%= form_for([@product, @product.review.build]) do |item| %>
+         <p>
+            <%= item.label :Review %><br>
+            <%= item.text_area :description %>
+         </p>
+         <p>
+            <%= item.label :rating %><br>
+            <%= item.text_area :rating %>
+        </p>
+         <p>
+            <%= item.submit %>
+         </p>
+      <% end %>
+    </div>
+          <% if @product.review.count > 0 %>
     <div class="row">
       <h2>Product Reviews</h2>
           <% @product.review.each do |reviews| %>
@@ -36,4 +53,5 @@
           
           <% end %>
     </div>
+     <% end %>
 </section>
